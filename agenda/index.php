@@ -22,16 +22,16 @@ $events = $req->fetchAll();
     <title>Panel Cliente - Funtraining </title>
 
     <!-- Bootstrap -->
-    <link href="/src/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font awesome -->
-    <link href="/src/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../src/libs/font-awesome/css/font-awesome.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="/src/css/custom.min.css" rel="stylesheet">
+    <link href="../src/css/custom.min.css" rel="stylesheet">
 
     	<!-- FullCalendar -->
-	  <link href='/src/libs/fullcalendar/dist/fullcalendar.css' rel='stylesheet' />
+	  <link href='../src/libs/fullcalendar/dist/fullcalendar.css' rel='stylesheet' />
 
     <style>
       body{
@@ -72,7 +72,7 @@ $events = $req->fetchAll();
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="/src/images/user.png" alt="..." class="img-circle profile_img">
+                <img src="../src/images/user.png" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Bienvenido</span>
@@ -265,19 +265,19 @@ $events = $req->fetchAll();
     </div>
 
     <!-- jQuery -->
-    <script src="/src/libs/jquery.js"></script>
+    <script src="../src/libs/jquery.js"></script>
 
     	<!-- Bootstrap Core JavaScript -->
-	  <script src="/src/libs/bootstrap/bootstrap.min.js"></script>
+	  <script src="../src/libs/bootstrap/bootstrap.min.js"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="/src/js/custom.js"></script>
+    <script src="../src/js/custom.js"></script>
 
     	<!-- FullCalendar -->
-	<script src='/src/libs/moment/moment.min.js'></script>
-	<script src='/src/libs/fullcalendar/dist/fullcalendar.min.js'></script>
-	<script src='/src/libs/fullcalendar/dist/fullcalendar.js'></script>
-	<script src='/src/libs/fullcalendar/dist/locale/es.js'></script>
+	<script src='../src/libs/moment/moment.min.js'></script>
+	<script src='../src/libs/fullcalendar/dist/fullcalendar.min.js'></script>
+	<script src='../src/libs/fullcalendar/dist/fullcalendar.js'></script>
+	<script src='../src/libs/fullcalendar/dist/locale/es.js'></script>
 	
 	
 	<script>
