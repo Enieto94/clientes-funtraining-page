@@ -4088,6 +4088,11 @@ a.hiddenanchor {
   float: right;
   margin-left: 15px; }
 
+  .profile.clearfix{
+    display: flex !important;
+    align-items: center !important;
+  }
+
 .clearfix:after, form:after {
   content: ".";
   display: block;
