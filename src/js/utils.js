@@ -218,6 +218,13 @@ function getCookie(cookieName) {
     return "";
 }
 
+function deleteCookie(cookieName) {
+    let date = new Date();
+    date.setTime(date.getTime() - (5 * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString;
+    document.cookie = cookieName + "=;" + expires + ";path=/";
+}
+
 /**
  * API
  */
