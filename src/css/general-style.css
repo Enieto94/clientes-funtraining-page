@@ -144,6 +144,7 @@ header {
     transition: ease-in-out 0.3s;
 }
 header.active{
+    top: 0;
     left: 0;
     transition: ease-in-out 0.3s;
 }
