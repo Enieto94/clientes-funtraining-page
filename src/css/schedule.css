@@ -1,0 +1,21 @@
+body{
+    background: #fff;
+}
+.nav_title{
+    background: #FF6D00;
+}
+.left_col {
+    background: #232323;
+}
+.nav.side-menu>li.active>a{
+    background: #232323;
+}
+.nav-md ul.nav.child_menu li:before{
+    background: #0BC9FF;
+}
+.nav-sm ul.nav.child_menu{
+    background: #232323;
+}
+.right_col{
+    color: #232323;
+}
