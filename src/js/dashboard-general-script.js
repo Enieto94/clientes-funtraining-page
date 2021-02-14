@@ -33,10 +33,11 @@ if (user === null) {
 $('#btn-logout').click(async function (event) {
     try {
         await axios.post(`${API_URL}/auth/logout`, {}, { headers: { 'Authorization': `Bearer ${getCookie("token")}` } });
-        // TODO To finish, is necessary to delete the Cookie
+        deleteCookie("token");
 
         user = null;
-        localStorage.removeItem("user");
+        localStorage.getItem('user', '');
+        localStorage.removeItem('user');
 
         window.location.href = "/";
 
