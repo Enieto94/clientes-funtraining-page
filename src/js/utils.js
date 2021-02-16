@@ -228,8 +228,8 @@ function deleteCookie(cookieName) {
 /**
  * API
  */
-// const API_URL = 'http://localhost:8000/api';
-const API_URL = 'https://api.funtraining.net/api';
+const API_URL = 'http://localhost:8000/api';
+// const API_URL = 'https://api.funtraining.net/api';
 
 /**
  * AXIOS

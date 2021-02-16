@@ -50,12 +50,8 @@
             <div class="menu_section">
               <h3>General</h3>
               <ul class="nav side-menu">
-                <li>
-                  <ul class="nav child_menu">
-                    <li><a href="./">Agenda</a></li>
-                    <li><a href="../datos-personales/">Datos personales</a></li>
-                  </ul>
-                </li>
+                <li><a href="/agenda/"> <i class="fa fa-calendar"></i>Datos personales</a></li>
+                <li><a href="/datos-personales/"> <i class="fa fa-database"></i>Datos personales</a></li>
               </ul>
             </div>
           </div>
