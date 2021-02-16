@@ -1,5 +1,6 @@
 body{
-    background: #fff;
+    background: #F7F7F7;
+
 }
 .nav_title{
     background: #FF6D00;
@@ -18,4 +19,56 @@ body{
 }
 .right_col{
     color: #232323;
+}
+.right_col{
+    min-height: 700px !important;
+    height: 700px !important;
+    overflow-y: scroll;
+}
+#calendar{
+    height: 100%;
+    overflow: scroll;
+}
+#calendar::-webkit-scrollbar{
+    display: none !important;
+}
+.navbar-nav{
+    margin: 0;
+}
+.form-control{
+    margin-bottom: 10px;
+}
+
+form{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn-naranja{
+    background: #FF6D00;
+    color: #fff;
+}
+.btn-naranja:hover{
+    background: #0BC9FF;
+    color: #fff;
+}
+.btn, .btn:hover{
+    transition: ease-in-out 0.3s;
+    font-weight: 600;
+}
+input{
+    border-radius: 10px !important;
+}
+
+.dropdown-menu.dropdown-usermenu.pull-right.show{
+    transform: translate3d(0px, 0px, 0px) !important;
+    width: 160px;
+    right: 0 !important;
+    left: unset !important;
+}
+@media screen and (min-width: 768px){
+
+    form{
+        width: 50%
+    }
 }

@@ -27,9 +27,6 @@
 			<a href="https://funtraining.net/comentarios/" class="item-menu">COMENTARIOS</a>
 		</li>
 		<li>
-			<a href="https://funtraining.net" class="item-menu">SERVICIOS</a>
-		</li>
-		<li>
 			<a href="https://funtraining.net/contactenos/" class="item-menu">CONTACTENOS</a>
 		</li>
 	</ul>

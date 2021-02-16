@@ -50,9 +50,10 @@
             <div class="menu_section">
               <h3>General</h3>
               <ul class="nav side-menu">
-                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                <li>
                   <ul class="nav child_menu">
-                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="./">Agenda</a></li>
+                    <li><a href="../datos-personales/">Datos personales</a></li>
                   </ul>
                 </li>
               </ul>

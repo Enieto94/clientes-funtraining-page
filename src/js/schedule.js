@@ -98,6 +98,7 @@ async function main() {
         locale: 'es',
         initialView: 'dayGridMonth', // ['dayGridMonth : DEFAULT', 'dayGridWeek', 'timeGridDay', 'listWeek']
         timeZone: 'local',
+        fixedWeekCount: false,
         validRange: {
             start: getTodayDate()
         },
