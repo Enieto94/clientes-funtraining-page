@@ -21,8 +21,8 @@ body{
     color: #232323;
 }
 .right_col{
-    min-height: 768px !important;
-    height: 768px !important;
+    min-height: 700px !important;
+    height: 700px !important;
     overflow-y: scroll;
 }
 #calendar{
