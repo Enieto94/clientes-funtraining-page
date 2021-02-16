@@ -1,3 +1,4 @@
+import './utils.js';
 $("#btn-login").click(async function (event) {
     // event.preventDefault();
     const email = $("#email").val();
