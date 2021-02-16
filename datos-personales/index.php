@@ -49,7 +49,7 @@
             <div class="menu_section">
               <h3>General</h3>
               <ul class="nav side-menu">
-                <li><a href="/agenda/"> <i class="fa fa-calendar"></i>Datos personales</a></li>
+                <li><a href="/agenda/"> <i class="fa fa-calendar"></i>Agenda</a></li>
                 <li><a href="/datos-personales/"> <i class="fa fa-database"></i>Datos personales</a></li>
               </ul>
             </div>
