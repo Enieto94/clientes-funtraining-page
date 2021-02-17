@@ -85,6 +85,9 @@
       <div class="right_col" role="main">
         <div class="container">
           <h1>Agenda tu entrenamiento</h1>
+          <p>
+            <strong id="aclaratory">IMPORTANTE:</strong> Nuestros Horarios son: L - V 5:00 AM - 10:00 PM y Sábados / Festivos 8:00 AM - 2:00 PM
+          </p>
           <div id="calendar" class="col-md-12">
           </div>
           <!-- CREATE EVENT Modal -->
@@ -99,14 +102,14 @@
                   </div>
                   <div class="modal-body">
                     <div class="form-group">
-                      <label for="title" class="col-sm-2 control-label">Titulo</label>
-                      <div class="col-sm-10">
+                      <label for="title" class="col-sm-4 control-label">Titulo</label>
+                      <div class="col-sm-8">
                         <input type="text" name="title" class="form-control" id="title" placeholder="Titulo" disabled>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="color" class="col-sm-2 control-label">Color</label>
-                      <div class="col-sm-10">
+                      <label for="color" class="col-sm-4 control-label">Color</label>
+                      <div class="col-sm-8">
                         <select name="color" class="form-control" id="color" disabled>
                           <option value="seleccionar">Seleccionar</option>
                           <option style="color:#0071c5;" value="#0071c5" selected>&#9724; Azul oscuro</option>
@@ -120,15 +123,15 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="start" class="col-sm-2 control-label">Fecha y hora inicial</label>
-                      <div class="col-sm-10">
-                        <input type="datetime-local" name="start" class="form-control" id="start">
+                      <label for="start" class="col-sm-4 control-label">Fecha y hora inicial</label>
+                      <div class="col-sm-8">
+                        <input type="datetime-local" name="start" class="form-control" id="start" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}" onchange="setMinutesToCero(this)">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="end" class="col-sm-2 control-label">Fecha y hora final</label>
-                      <div class="col-sm-10">
-                        <input type="datetime-local" name="end" class="form-control" id="end">
+                      <label for="end" class="col-sm-4 control-label">Fecha y hora final</label>
+                      <div class="col-sm-8">
+                        <input type="datetime-local" name="end" class="form-control" id="end" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}" onchange="setMinutesToCero(this)" disabled>
                       </div>
                     </div>
                   </div>
@@ -152,15 +155,15 @@
                   </div>
                   <div class="modal-body">
                     <div class="form-group">
-                      <label for="title" class="col-sm-2 control-label">Titulo</label>
-                      <div class="col-sm-10">
+                      <label for="title" class="col-sm-4 control-label">Titulo</label>
+                      <div class="col-sm-8">
                         <input type="text" name="edit-title" class="form-control" id="edit-title" placeholder="Titulo"
                           disabled>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="color" class="col-sm-2 control-label">Color</label>
-                      <div class="col-sm-10">
+                      <label for="color" class="col-sm-4 control-label">Color</label>
+                      <div class="col-sm-8">
                         <select name="color" class="form-control" id="edit-color" disabled>
                           <option value="seleccionar">Seleccionar</option>
                           <option style="color:#0071c5;" value="#0071c5" selected>&#9724; Azul oscuro</option>
@@ -174,15 +177,15 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="start" class="col-sm-2 control-label">Fecha y hora inicial</label>
-                      <div class="col-sm-10">
-                        <input type="datetime-local" name="edit-start" class="form-control" id="edit-start">
+                      <label for="start" class="col-sm-4 control-label">Fecha y hora inicial</label>
+                      <div class="col-sm-8">
+                        <input type="datetime-local" name="edit-start" class="form-control" id="edit-start" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}" onchange="setMinutesToCero(this)">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="end" class="col-sm-2 control-label">Fecha y hora final</label>
-                      <div class="col-sm-10">
-                        <input type="datetime-local" name="edit-end" class="form-control" id="edit-end">
+                      <label for="end" class="col-sm-4 control-label">Fecha y hora final</label>
+                      <div class="col-sm-8">
+                        <input type="datetime-local" name="edit-end" class="form-control" id="edit-end" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}" onchange="setMinutesToCero(this)" disabled>
                       </div>
                     </div>
                     <div class="form-group">
@@ -198,7 +201,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                    <button class="btn btn-primary" type="submit" id="btn-edit-event">Editar</button>
+                    <button class="btn btn-primary" type="submit" id="btn-edit-event">Actualizar</button>
                   </div>
                 </form>
               </div>

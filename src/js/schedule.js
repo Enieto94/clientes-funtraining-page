@@ -84,11 +84,50 @@ function getTodayDate() {
     return today;
 }
 
+function setMinutesToCero(element) {
+    const date = element.value;
+    const dateWithCeroMinutes = moment(date).minutes(0).format('YYYY-MM-DDTHH:mm');
+    element.value = dateWithCeroMinutes;
+    let endInput = "end";
+    if (element.id === "edit-start") {
+        endInput = "edit-end";
+    }
+    updateEndDateSiblingInput(element, endInput);
+}
+
+function updateEndDateSiblingInput(startInput, endInput) {
+    const $endInput = document.getElementById(endInput);
+    $endInput.value = moment(startInput.value).minutes(0).add(1, 'hour').format('YYYY-MM-DDTHH:mm');
+}
+
 /**
  * INIT
  */
 let userEvents;
 let calendar;
+
+// ESTRUCTURA DÍAS FESTIVOS MES-DIA 00-00
+const holidays = [
+    "03-08",
+    "03-22",
+    "04-01",
+    "04-02-",
+    "05-01",
+    "05-09",
+    "05-17",
+    "06-07",
+    "06-14",
+    "06-20",
+    "07-05",
+    "07-20",
+    "08-07",
+    "08-16",
+    "10-18",
+    "11-01",
+    "11-15",
+    "12-08",
+    "12-25"
+]
 
 async function main() {
     userEvents = await getUserEvents();
@@ -102,15 +141,36 @@ async function main() {
         validRange: {
             start: getTodayDate()
         },
+        businessHours: [
+            {
+                daysOfWeek: [1, 2, 3, 4, 5], // Monday, Tuesday, Wednesday, Thursday, Friday
+                startTime: '05:00', // 5am
+                endTime: '22:00' // 10pm
+            },
+            {
+                daysOfWeek: [6], // Saturday
+                startTime: '08:00', // 8am
+                endTime: '14:00' // 2pm
+            }
+        ],
         events: userEvents,
         dateClick: function (dateInfo) {
+            let dateSelectedMonth = dateInfo.date.getMonth() + 1;
+            const daySelectedFormated = moment(dateInfo.date).minutes(0).format('YYYY-MM-DDTHH:mm');
             $('#ModalAdd #title').val(user.name);
-            $('#ModalAdd #start').val(moment(dateInfo.date).format('YYYY-MM-DDTHH:mm'));
-            $('#ModalAdd #end').val(moment(dateInfo.date).add(1, 'hour').format('YYYY-MM-DDTHH:mm'));
+            $('#ModalAdd #start').prop("min", `${dateInfo.date.getFullYear()}-${(dateSelectedMonth < 10) ? '0' + dateSelectedMonth : dateSelectedMonth}-${dateInfo.date.getDate()}T05:00`);
+            $('#ModalAdd #start').prop("max", `${dateInfo.date.getFullYear()}-${(dateSelectedMonth < 10) ? '0' + dateSelectedMonth : dateSelectedMonth}-${dateInfo.date.getDate()}T21:00`);
+            $('#ModalAdd #start').val(daySelectedFormated);
+            $('#ModalAdd #end').val(moment(daySelectedFormated).add(1, 'hour').format('YYYY-MM-DDTHH:mm'));
             $('#ModalAdd').modal('show');
         },
         eventClick: function (info) {
             let eventSelected = info.event;
+
+            let eventSelectedDateMonth = eventSelected.start.getMonth() + 1;
+
+            $('#ModalEdit #edit-start').prop("min", `${eventSelected.start.getFullYear()}-${(eventSelectedDateMonth < 10) ? '0' + eventSelectedDateMonth : eventSelectedDateMonth}-${eventSelected.start.getDate()}T05:00`);
+            $('#ModalEdit #edit-start').prop("max", `${eventSelected.start.getFullYear()}-${(eventSelectedDateMonth < 10) ? '0' + eventSelectedDateMonth : eventSelectedDateMonth}-${eventSelected.start.getDate()}T21:00`);
 
             $('#ModalEdit #edit-id').val(eventSelected.id);
             $('#ModalEdit #edit-title').val(eventSelected.title);
@@ -181,7 +241,6 @@ $('#create-event-form').submit(async function (event) {
     const newEventColor = $('#color').val();
     const newEventStart = $('#start').val();
     const newEventEnd = $('#end').val();
-
     const newEvent = await createEvent({
         title: newEventTitle,
         color: newEventColor,

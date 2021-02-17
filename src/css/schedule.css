@@ -25,6 +25,9 @@ body{
     height: 700px !important;
     overflow-y: scroll;
 }
+#aclaratory{
+    color: #FF6D00;
+}
 #calendar{
     height: 100%;
     overflow: scroll;
@@ -40,7 +43,7 @@ body{
 }
 
 form{
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -65,10 +68,4 @@ input{
     width: 160px;
     right: 0 !important;
     left: unset !important;
-}
-@media screen and (min-width: 768px){
-
-    form{
-        width: 50%
-    }
 }
