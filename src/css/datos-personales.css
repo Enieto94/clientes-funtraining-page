@@ -1,0 +1,6 @@
+form{
+    width: 50%;
+}
+input,input::placeholder{
+    text-align: center;
+}

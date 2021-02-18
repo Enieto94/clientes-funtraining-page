@@ -22,6 +22,7 @@
   <link href="/src/css/custom.css" rel="stylesheet">
 
   <link rel="stylesheet" href="/src/css/schedule.css">
+  <link rel="stylesheet" href="/src/css/datos-personales.css">
 </head>
 
 <body class="nav-md">
@@ -86,26 +87,33 @@
             
             <h3>Actualice o registre su información personal</h3>
 
-            <form action="">
-                <input type="text" class="form-control" placeholder="Número de identificacion">
-                <input type="text" class="form-control" placeholder="Nombres y Apellidos">
-                <input type="text" class="form-control" placeholder="Edad">
-                <input type="text" class="form-control" placeholder="Peso">
-                <input type="text" class="form-control" placeholder="Correo electrónico">
-                <input type="text" class="form-control" placeholder="Número de celular">
-                <input type="text" class="form-control" placeholder="Complicaciones">
-                <input type="text" class="form-control" placeholder="Contraseña">
-                <button class="btn btn-naranja" id="btn-enviar-datos-cliente">
-                    ENVIAR
+            <form id="update-user">
+                <h2>Número de Identificación</h2>
+                <input type="text" class="form-control" placeholder="Número de identificacion" id="identification">
+                <h2>Nombres y Apellidos</h2>
+                <input type="text" class="form-control" placeholder="Nombres y Apellidos" id="name">
+                <h2>Edad</h2>
+                <input type="text" class="form-control" placeholder="Edad" id="age">
+                <h2>Peso</h2>
+                <input type="text" class="form-control" placeholder="Peso" id="weight">
+                <h2>Correo</h2>
+                <input type="text" class="form-control" placeholder="Correo electrónico" id="email">
+                <h2>Número de celular</h2>
+                <input type="text" class="form-control" placeholder="Número de celular" id="cellphone">
+                <h2>Heridas / Complicaciones</h2>
+                <input type="text" class="form-control" placeholder="Complicaciones" id="wounds">
+                <h2>Contraseña</h2>
+                <!-- <input type="password" class="form-control" placeholder="Contraseña" id="password"> -->
+                <button class="btn btn-naranja">
+                    Actualizar
                 </button>
-                
             </form>
 
       </div>
       <!-- /page content -->
       <!-- footer content -->
-      <footer>
-      </footer>
+      <!-- <footer>
+      </footer> -->
       <!-- /footer content -->
     </div>
   </div>
@@ -124,6 +132,7 @@
   <script src="/src/libs/axios/axios.min.js"></script>
   <script src="/src/js/utils.js"></script>
   <script src="/src/js/dashboard-general-script.js"></script>
+  <script src="/src/js/datos-personales.js"></script>
 </body>
 
 </html>
