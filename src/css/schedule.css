@@ -21,9 +21,13 @@ body{
     color: #232323;
 }
 .right_col{
-    min-height: 700px !important;
-    height: 700px !important;
+    min-height: 30vh !important;
+    height: 85vh;
     overflow-y: scroll;
+}
+.right_col::-webkit-scrollbar{
+    width:0px;
+    background-color: transparent;
 }
 #aclaratory{
     color: #FF6D00;
