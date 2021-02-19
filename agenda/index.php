@@ -83,11 +83,16 @@
       <!-- /top navigation -->
       <!-- page content -->
       <div class="right_col" role="main">
-        <div class="container">
-          <h1>Agenda tu entrenamiento</h1>
-          <p>
-            <strong id="aclaratory">IMPORTANTE:</strong> Nuestros Horarios son: L - V 5:00 AM - 10:00 PM y Sábados / Festivos 8:00 AM - 2:00 PM
-          </p>
+        <div class="container-fluid">
+          <h4>
+            <strong id="aclaratory">IMPORTANTE</strong> Nuestros Horarios son: 
+          </h4>
+          <h5>
+            <strong>Lunes a Viernes </strong> 5:00 AM - 12:00 PM / 4:00 PM - 10:00 PM
+          </h5>
+          <h5>
+           <strong>Sábados / Festivos</strong> 8:00 AM - 2:00 PM
+          </h5>
           <div id="calendar" class="col-md-12">
           </div>
           <!-- CREATE EVENT Modal -->
