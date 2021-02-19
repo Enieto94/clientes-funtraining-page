@@ -74,3 +74,10 @@ input{
     right: 0 !important;
     left: unset !important;
 }
+
+@media screen and (min-width: 768px){
+    .dropdown-menu.dropdown-usermenu.pull-right.show{
+        top:43px !important;
+        left: -55px !important;
+    }
+}
