@@ -1,6 +1,6 @@
 async function getAuthenticatedUserInfo() {
     try {
-        const serverResponse = await axios.get(`${API_URL}/me`, { headers: { 'Authorization': `Bearer ${getCookie("token")}` } });
+        const serverResponse = await axios.get(`${API_URL}/users/auth/me`, { headers: { 'Authorization': `Bearer ${getCookie("token")}` } });
         const authenticatedUserInfo = serverResponse.data;
         return authenticatedUserInfo;
 
@@ -8,6 +8,7 @@ async function getAuthenticatedUserInfo() {
         console.warn("ERROR: ", error);
         if (error.response.status === 401) {
             window.location.href = '/';
+            console.log(error);
         } else {
             Swal.fire({
                 icon: 'error',
@@ -32,7 +33,7 @@ if (user === null) {
 
 $('#btn-logout').click(async function (event) {
     try {
-        await axios.post(`${API_URL}/auth/logout`, {}, { headers: { 'Authorization': `Bearer ${getCookie("token")}` } });
+        await axios.post(`${API_URL}/users/logout`, {}, { headers: { 'Authorization': `Bearer ${getCookie("token")}` } });
         deleteCookie("token");
 
         user = null;

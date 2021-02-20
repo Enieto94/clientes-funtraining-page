@@ -93,7 +93,10 @@
           <h5>
            <strong>Sábados / Festivos</strong> 8:00 AM - 2:00 PM
           </h5>
-          <div id="calendar" class="col-md-12">
+          <div class="row" style="height: 500px;">
+            <div id="calendar">
+            </div>
+
           </div>
           <!-- CREATE EVENT Modal -->
           <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -215,10 +218,6 @@
         </div>
       </div>
       <!-- /page content -->
-      <!-- footer content -->
-      <footer>
-      </footer>
-      <!-- /footer content -->
     </div>
   </div>
   <!-- Custom Theme Scripts -->

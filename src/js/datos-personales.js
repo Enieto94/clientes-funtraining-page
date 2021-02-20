@@ -1,6 +1,6 @@
 async function updateUser(userToUpdate) {
     try {
-        const serverResponse = await axios.put(`${API_URL}/users/${user.id}`, userToUpdate, { headers: { 'Authorization': `Bearer ${getCookie("token")}` } });
+        const serverResponse = await axios.put(`${API_URL}/users/auth/me`, userToUpdate, { headers: { 'Authorization': `Bearer ${getCookie("token")}` } });
         return serverResponse.data;
 
     } catch (error) {

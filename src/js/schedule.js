@@ -1,13 +1,14 @@
 async function getUserEvents() {
     try {
-        const serverResponse = await axios.get(`${API_URL}/users/${user.id}/events`, { headers: { 'Authorization': `Bearer ${getCookie("token")}` } });
-        const events = serverResponse.data.data;
+        const serverResponse = await axios.get(`${API_URL}/users/auth/me/events`, { headers: { 'Authorization': `Bearer ${getCookie("token")}` } });
+        const events = serverResponse.data.events;
         return events;
 
     } catch (error) {
         console.warn("ERROR: ", error);
         if (error.response.status === 401) {
             window.location.href = "/";
+            console.log(error);
         } else {
             Swal.fire({
                 icon: 'error',
@@ -64,7 +65,7 @@ async function deleteEvent(eventId) {
     } catch (error) {
         console.warn("ERROR: ", error);
         if (error.response.status === 401) {
-            window.location.href = "/";
+            // window.location.href = "/";
         } else {
             Swal.fire({
                 icon: 'error',
@@ -135,6 +136,7 @@ async function main() {
 
     calendar = new FullCalendar.Calendar(calendarElement, {
         locale: 'es',
+        height: '100%',
         initialView: 'dayGridMonth', // ['dayGridMonth : DEFAULT', 'dayGridWeek', 'timeGridDay', 'listWeek']
         timeZone: 'local',
         fixedWeekCount: false,
@@ -182,54 +184,6 @@ async function main() {
     });
 
     calendar.render();
-
-    // $('#calendar').fullCalendar({
-    //     header: {
-    //         language: 'es',
-    //         left: 'prev,next today',
-    //         center: 'title',
-    //         right: 'month,basicWeek,basicDay',
-    //     },
-    //     defaultDate: yyyy+"-"+mm+"-"+dd,
-    //     editable: true,
-    //     eventLimit: true, // allow "more" link when too many events
-    //     selectable: true,
-    //     selectHelper: true,
-    //     select: function(start, end) {
-    //         const check = moment(start).format('YYYY-MM-DD');
-    //         const actualYear = new Date().getFullYear();
-    //         const actualMonth = new Date().getMonth() + 1;
-    //         const actualDay = new Date().getDate();
-    //         const today = `${actualYear}-${(actualMonth < 10) ? '0' + actualMonth : actualMonth}-${(actualDay < 10) ? '0' + actualDay : actualDay}`;
-    //         const todayFormatted = moment(today).format('YYYY-MM-DD');
-
-    //         if(check < todayFormatted){
-    //             alert('la fecha es vieja,no se puede añadir el evento');
-
-    //         }else{
-    //             $('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD HH:mm:ss'));
-    //             $('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD HH:mm:ss'));
-    //             $('#ModalAdd').modal('show');
-    //         }
-    //     },
-    //     eventRender: function(event, element) {
-    //         element.bind('dblclick', function() {
-    //             $('#ModalEdit #id').val(event.id);
-    //             $('#ModalEdit #title').val(event.title);
-    //             $('#ModalEdit #color').val(event.color);
-    //             $('#ModalEdit').modal('show');
-    //         });
-    //     },
-    //     eventDrop: function(event, delta, revertFunc) { // si changement de position
-    //         // edit(event);
-    //         const eventEditted = editEvent(event);
-    //     },
-    //     eventResize: function(event,dayDelta,minuteDelta,revertFunc) { // si changement de longueur
-    //         // edit(event);
-    //         deleteEvent(event);
-    //     },
-    //     events: userEvents
-    // });
 
 }
 main();
