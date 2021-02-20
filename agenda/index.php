@@ -31,14 +31,14 @@
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"> <span>Funtraining</span></a>
+            <a href="index.html" class="site_title"> 
+              <span>Fun Training</span>
+              <img src="/src/img/logo-panel.jpg" id="logo-panel" alt="">
+            </a>
           </div>
           <div class="clearfix"></div>
           <!-- menu profile quick info -->
           <div class="profile clearfix">
-            <div class="profile_pic">
-              <img src="/src/img/user.png" alt="..." class="img-circle profile_img">
-            </div>
             <div class="profile_info">
               <h2>Cliente</h2>
             </div>
@@ -69,7 +69,7 @@
               <li class="nav-item dropdown open" style="padding-left: 15px;">
                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
                   data-toggle="dropdown" aria-expanded="false">
-                  <img src="/src/img/user.png" alt="">Cliente
+                  Cliente
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#" id="btn-logout"><i class="fa fa-sign-out pull-right"></i>Cerrar
