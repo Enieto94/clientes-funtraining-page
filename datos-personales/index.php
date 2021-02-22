@@ -101,8 +101,8 @@
                 <input type="text" class="form-control" placeholder="Número de celular" id="cellphone">
                 <h2>Heridas / Complicaciones</h2>
                 <input type="text" class="form-control" placeholder="Complicaciones" id="wounds">
-                <!-- <h2>Contraseña</h2> -->
-                <!-- <input type="password" class="form-control" placeholder="Contraseña" id="password"> -->
+                <h2>Contraseña</h2>
+                <input type="password" class="form-control" placeholder="Contraseña" id="password">
                 <button class="btn btn-naranja">
                     Actualizar
                 </button>

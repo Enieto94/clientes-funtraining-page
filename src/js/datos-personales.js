@@ -40,24 +40,80 @@ $('#update-user').submit(async function (event) {
     const email = $('#email').val();
     const cellphone = $('#cellphone').val();
     const wounds = $('#wounds').val();
+    const password = $('#password').val();
 
+    /**
+     * TO DO validate void inputs, except password
+     */
 
-    const userEditted = await updateUser({
-        identification,
-        name,
-        age,
-        weight,
-        email,
-        cellphone,
-        wounds
-    });
+    if (identification === "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'El campo no puede ir vacío',
+            text: "Diligencie el campo identificacion"
+        });
+    } else if (age === "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'El campo no puede ir vacío',
+            text: "Diligencie el campo Edad"
+        });
+    } else if (weight === "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'El campo no puede ir vacío',
+            text: "Diligencie el campo Edad"
+        });
 
-    user = userEditted;
-    localStorage.setItem("user", JSON.stringify(user));
+    }else if (email === "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'El campo no puede ir vacío',
+            text: "Diligencie el campo Correo"
+        });
 
-    Swal.fire({
-        icon: 'success',
-        title: 'Datos actualizados correctamente',
-        text: "Tu información ha sido actualizada de forma satisfactoria."
-    });
+    }else if (cellphone === "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'El campo no puede ir vacío',
+            text: "Diligencie el campo Celular"
+        });
+
+    }else if (wounds === "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'El campo no puede ir vacío',
+            text: "Diligencie el campo Lesiones"
+        });
+
+    }else{
+        let userToUpdate = {
+            identification,
+            name,
+            age,
+            weight,
+            email,
+            cellphone,
+            wounds
+        }
+    
+        if (password !== "") {
+            userToUpdate.password = password;
+        }
+    
+        const userEditted = await updateUser(userToUpdate);
+    
+        user = userEditted;
+        localStorage.setItem("user", JSON.stringify(user));
+    
+        Swal.fire({
+            icon: 'success',
+            title: 'Datos actualizados correctamente',
+            text: "Tu información ha sido actualizada de forma satisfactoria."
+        });
+        
+        $('#password').val("");
+    }
+
+    
 });
