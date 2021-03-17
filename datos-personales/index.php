@@ -110,10 +110,6 @@
 
       </div>
       <!-- /page content -->
-      <!-- footer content -->
-      <!-- <footer>
-      </footer> -->
-      <!-- /footer content -->
     </div>
   </div>
   <!-- Custom Theme Scripts -->
