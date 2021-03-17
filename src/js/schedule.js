@@ -1,9 +1,9 @@
 async function getUserEvents() {
     try {
-        const serverResponse = await axios.get(`${API_URL}/users/auth/me/events`, { headers: { 'Authorization': `Bearer ${getCookie("token")}` } });
+        const serverResponse = await axios.get(`${API_URL}/users/auth/me/events/`, { headers: { 'Authorization': `Bearer ${getCookie("token")}` } });
         const events = serverResponse.data.events;
         return events;
-
+        
     } catch (error) {
         console.warn("ERROR: ", error);
         if (error.response.status === 401) {
@@ -131,6 +131,7 @@ const holidays = [
 ]
 
 async function main() {
+    
     userEvents = await getUserEvents();
     const calendarElement = document.getElementById('calendar');
 
