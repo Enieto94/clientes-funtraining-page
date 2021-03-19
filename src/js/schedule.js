@@ -1,14 +1,13 @@
 async function getUserEvents() {
     try {
-        const serverResponse = await axios.get(`${API_URL}/users/auth/me/events/`, { headers: { 'Authorization': `Bearer ${getCookie("token")}` } });
-        const events = serverResponse.data.events;
+        const serverResponse = await axios.get(`${API_URL}/users/${user.id}/events`, { headers: { 'Authorization': `Bearer ${getCookie("token")}` } });
+        const events = serverResponse.data.data;
         return events;
-        
+
     } catch (error) {
         console.warn("ERROR: ", error);
         if (error.response.status === 401) {
             window.location.href = "/";
-            console.log(error);
         } else {
             Swal.fire({
                 icon: 'error',
@@ -65,7 +64,7 @@ async function deleteEvent(eventId) {
     } catch (error) {
         console.warn("ERROR: ", error);
         if (error.response.status === 401) {
-            // window.location.href = "/";
+            window.location.href = "/";
         } else {
             Swal.fire({
                 icon: 'error',
@@ -131,13 +130,11 @@ const holidays = [
 ]
 
 async function main() {
-    
     userEvents = await getUserEvents();
     const calendarElement = document.getElementById('calendar');
 
     calendar = new FullCalendar.Calendar(calendarElement, {
         locale: 'es',
-        height: '100%',
         initialView: 'dayGridMonth', // ['dayGridMonth : DEFAULT', 'dayGridWeek', 'timeGridDay', 'listWeek']
         timeZone: 'local',
         fixedWeekCount: false,
@@ -185,7 +182,6 @@ async function main() {
     });
 
     calendar.render();
-
 }
 main();
 
