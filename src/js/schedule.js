@@ -5,7 +5,7 @@ async function getUserEvents() {
         return events;
         
     } catch (error) {
-        console.warn("ERROR: ", error);
+        console.warn("ERROR: ",error);
         if (error.response.status === 401) {
             window.location.href = "/";
             console.log(error);
