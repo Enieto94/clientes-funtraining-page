@@ -148,8 +148,14 @@ async function main() {
             {
                 daysOfWeek: [1, 2, 3, 4, 5], // Monday, Tuesday, Wednesday, Thursday, Friday
                 startTime: '05:00', // 5am
+                endTime: '11:00' // 11 am
+            },
+            {
+                daysOfWeek: [1, 2, 3, 4, 5], // Monday, Tuesday, Wednesday, Thursday, Friday
+                startTime: '16:00', // 4pm
                 endTime: '22:00' // 10pm
             },
+            
             {
                 daysOfWeek: [6], // Saturday
                 startTime: '08:00', // 8am

@@ -88,7 +88,7 @@
             <strong id="aclaratory">IMPORTANTE</strong> Nuestros Horarios son: 
           </h4>
           <h5>
-            <strong>Lunes a Viernes </strong> 5:00 AM - 12:00 PM / 4:00 PM - 10:00 PM
+            <strong>Lunes a Viernes </strong> 5:00 AM - 11:00 AM / 4:00 PM - 10:00 PM
           </h5>
           <h5>
            <strong>Sábados / Festivos</strong> 8:00 AM - 2:00 PM
